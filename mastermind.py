@@ -25,16 +25,48 @@ def check_if_correct(input):
 	return input
 
 def compare(input, correct):
+	# Compares if input from user is same as randomised number
+	i = 0
+	right_place = 0
+	right_number = 0
+	s = 1
+	n = 0
+	t = 0
 	if input == correct:
 		print input
 		print correct
-		print "It is same"
+		print "Correct, you're mastermind of masterminds"
 		return True
+	
 	else:
-		print input
-		print correct
-		print "Not same"
-		return False
+		while n < 5:
+			while i < 5:
+				if input[n] == correct[i]:
+					right_place = right_place + 1
+				else:
+					while s < 5:
+						if input[n] == correct[s]:
+							right_number = right_number + 1
+							s = s + 1
+						else:
+							#n = n+1 
+							s = s + 1
+					
+			#print "input: ", input[i]
+			#print "correct: ",correct[i]
+			#print "Right Place: ",right_place
+			#print "Right Number: ", right_number
+				i = i + 1
+			n = n + 1	
+			t = t + 1
+			print t	
+	return {'rp' : right_place, 'rn' : right_number}
+		 
+			
+		#print input
+		#print correct
+		#print "Not same"
+		#return False
 
 #print input_from_user()
 #guess = input_from_user()
@@ -51,7 +83,15 @@ print input1
 print input_list
 print correct_answer
 #print rand_number()
-compare(input_list, correct_answer)
+rights = compare(input_list, correct_answer)
+
+print rights
+#print rights["rp"][0]
+#print rights["rn"][0]
+#right_place_final = right_place
+#right_number_final = right_number
+print "Right numbers: " , rights ["rn"]
+print "Numbers in right places:" , rights ['rp']
 
 #print (randint(0,9))
 	
