@@ -40,6 +40,21 @@ def compare(input, correct):
 	
 	else:
 		while n < 5:
+			if input[0] == correct[i]:
+				right_place = right_place + 1
+			
+			else:
+				s = 0
+				while s < 5:
+					if input[0] == correct[s]:
+						right_number = right_number + 1
+				s = s + 1
+					
+		n = n + 1
+	
+	
+	"""else:
+		while n < 5:
 			while i < 5:
 				if input[n] == correct[i]:
 					right_place = right_place + 1
@@ -56,10 +71,10 @@ def compare(input, correct):
 			#print "correct: ",correct[i]
 			#print "Right Place: ",right_place
 			#print "Right Number: ", right_number
-				i = i + 1
-			n = n + 1	
-			t = t + 1
-			print t	
+				i = i + 1 """
+			#n = n + 1 	
+			#t = t + 1
+			#print t
 	return {'rp' : right_place, 'rn' : right_number}
 		 
 			
